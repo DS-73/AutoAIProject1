@@ -15,16 +15,16 @@ def check_if_string_in_file(file_name, string_to_search):
 # Searching For CNN 
 if check_if_string_in_file('ModelTraining.py', 'Conv2D'):
     os.system('echo "Yes, string found in file" ')
-    os.system('sudo docker -divt /root/AutoAIProject1:/root/ --name Python_OS CNN_Python')
+    os.system('sudo docker -divt /root/AutoAIProject1:/root/ --name Python_OS cnn_djd')
 
 # Searching for Linear Regression
 if check_if_string_in_file('ModelTraining.py', 'LinearRegression'):
     os.system('echo "Yes, string found in file" ')
-    os.system('sudo docker -divt /root/AutoAIProject1:/root/ --name Python_OS Linear_Python')
+    os.system('sudo docker -divt /root/AutoAIProject1:/root/ --name Python_OS linear_djd')
 
 else:
     os.system('echo "Yes, string found in file" ')
-    os.system('sudo docker -divt /root/AutoAIProject1:/root/ --name Python_OS Basic_Python')
+    os.system('sudo docker -divt /root/AutoAIProject1:/root/ --name Python_OS basic_djd')
 
 
 # In[ ]:
