@@ -69,15 +69,15 @@ model = Model(inputs = MobileNet.input, outputs = FC_Head)
 print(model.summary())
 
 
-# ### Loading our Face Dataset 
+# ### Loading our Coin Dataset 
 
 # In[4]:
 
 
 from keras.preprocessing.image import ImageDataGenerator
 
-train_data_dir = 'C:/Users/DS/Desktop/ML-Ops/coins/data/train/'
-validation_data_dir = 'C:/Users/DS/Desktop/ML-Ops/coins/data/validation/'
+train_data_dir = 'path of your training data'
+validation_data_dir = 'path of your validation data'
 
 # Let's use some data augmentaiton 
 train_datagen = ImageDataGenerator(
@@ -139,9 +139,8 @@ model.compile(loss = 'categorical_crossentropy',
 # Enter the number of training and validation samples here
 nb_train_samples = 6413
 nb_validation_samples = 844
-
-# We only train 5 EPOCHS 
-epochs = 5
+ 
+epochs = #If you require more than 70% accuracy you have to give more than 50epochs
 batch_size = 16
 
 history = model.fit_generator(
@@ -175,7 +174,7 @@ import numpy as np
 from os import listdir
 from os.path import isfile, join
 
-monkey_breeds_dict = {"[1]": "1 Cent,Australian dollar,australia",
+coin_dict = {"[1]": "1 Cent,Australian dollar,australia",
     "[2]": "2 Cents,Australian dollar,australia",
     "[3]": "5 Cents,Australian dollar,australia",
     "[4]": "10 Cents,Australian dollar,australia",
@@ -387,7 +386,7 @@ monkey_breeds_dict = {"[1]": "1 Cent,Australian dollar,australia",
     "[210]": "1 2 Dollar,US Dollar,usa",
     "[211]": "1 Dollar,US Dollar,usa"}
 
-monkey_breeds_dict_n = {
+coin_dict_n = {
     "1": "1 Cent,Australian dollar,australia",
     "2": "2 Cents,Australian dollar,australia",
     "3": "5 Cents,Australian dollar,australia",
@@ -602,10 +601,10 @@ monkey_breeds_dict_n = {
 }
 
 def draw_test(name, pred, im):
-    monkey = monkey_breeds_dict[str(pred)]
+    coin = coin_dict[str(pred)]
     BLACK = [0,0,0]
     expanded_image = cv2.copyMakeBorder(im, 80, 0, 0, 100 ,cv2.BORDER_CONSTANT,value=BLACK)
-    cv2.putText(expanded_image, monkey, (20, 60) , cv2.FONT_HERSHEY_SIMPLEX,1, (0,0,255), 2)
+    cv2.putText(expanded_image, coin, (20, 60) , cv2.FONT_HERSHEY_SIMPLEX,1, (0,0,255), 2)
     cv2.imshow(name, expanded_image)
 
 def getRandomImage(path):
@@ -613,7 +612,7 @@ def getRandomImage(path):
     folders = list(filter(lambda x: os.path.isdir(os.path.join(path, x)), os.listdir(path)))
     random_directory = np.random.randint(0,len(folders))
     path_class = folders[random_directory]
-    print("Class - " + monkey_breeds_dict_n[str(path_class)])
+    print("Class - " + coin_dict_n[str(path_class)])
     file_path = path + path_class
     file_names = [f for f in listdir(file_path) if isfile(join(file_path, f))]
     random_file_index = np.random.randint(0,len(file_names))
@@ -621,7 +620,7 @@ def getRandomImage(path):
     return cv2.imread(file_path+"/"+image_name)    
 
 for i in range(0,10):
-    input_im = getRandomImage("C:/Users/DS/Desktop/ML-Ops/coins/data/validation/")
+    input_im = getRandomImage("path of your validation data")
     input_original = input_im.copy()
     input_original = cv2.resize(input_original, None, fx=0.5, fy=0.5, interpolation = cv2.INTER_LINEAR)
     
