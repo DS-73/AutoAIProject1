@@ -13,3 +13,16 @@ Softwares
 	
 	- Jenkins
 	
+# Contributors
+1. Dhruv Saini  
+     Github - DS-73
+     LinkedIN - https://www.linkedin.com/in/dhruv-saini-032b4b1a6
+
+2. Jigyasu Deo  
+     Github - JigyasuDeo
+     LinkedIN - https://www.linkedin.com/in/jigyasu-d-b5861011a
+ 
+3. Divyansh Gautam  
+     Github - dvnsh22
+     LinkedIN -https://www.linkedin.com/in/divyansh-g-b00a191a2
+ 
