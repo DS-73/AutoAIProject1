@@ -5,7 +5,7 @@ In this project we have integrated machine learning and DevOps and automated the
 
 Operating System - RedHat 8
 
-Softwares 
+Softwares : 
 	
 	- Python 3
 	
