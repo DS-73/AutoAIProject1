@@ -15,7 +15,7 @@ Softwares :
 	
 # Contributors
 1. Dhruv Saini  
-     . LinkedIN - https://www.linkedin.com/in/dhruv-saini-032b4b1a6
+     . LinkedIN - https://www.linkedin.com/in/dhruv73
 
 2. Jigyasu Deo  
      . LinkedIN - https://www.linkedin.com/in/jigyasu-d-b5861011a
